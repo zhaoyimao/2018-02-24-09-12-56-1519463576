@@ -1,13 +1,21 @@
 function create_updated_collection(collection_a, object_b) {
   //在这里写入代码
   var arr=get_arr_count(collection_a);
-  var value=object_b.value;
-  for(var i=0;i<arr.length;i++){
-    for(var j=0;j<value.length;j++){
-      if(arr[i].key==value[j]){
+  // var value=object_b.value;
+  // for(var i=0;i<arr.length;i++){
+  //   for(var j=0;j<value.length;j++){
+  //     if(arr[i].key==value[j]){
+  //       arr[i].count=arr[i].count-Math.floor(arr[i].count/3);
+  //     }
+  //   }
+  // }
+  for(var i in arr){
+    object_b.value.filter(function(element){
+      if(arr[i].key==element){
         arr[i].count=arr[i].count-Math.floor(arr[i].count/3);
+        return arr[i].count;
       }
-    }
+    });
   }
 return arr;
 }

@@ -2,10 +2,13 @@
 var number_map_to_word_over_26 = function(collection){
   //return ['a','m','aa','ad','y','aa'];
   var result=new Array();
-  for(var i=0;i<collection.length;i++){
-    var letter=get_letter(collection[i]);
-    result.push(letter);
-  }
+  // for(var i=0;i<collection.length;i++){
+  //   var letter=get_letter(collection[i]);
+  //   result.push(letter);
+  // }
+  result=collection.map(function(element){
+    return get_letter(element);
+  });
 return result;
 };
 function get_letter(onenumber){

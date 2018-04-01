@@ -4,9 +4,9 @@ function compute_average(collection) {
   //在这里写入代码
   var result;
   var sum=0;
-  for(var i=0;i<collection.length;i++){
-    sum=sum+collection[i];
-  }
+  sum=collection.reduce(function(x,y){
+    return x+y;
+  })
   result=sum/collection.length;
   return result;
 }
